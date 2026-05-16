@@ -431,8 +431,8 @@ defmodule PlausibleWeb.Components.Billing do
       upgrade_assistance_required? ->
         ~H"""
         contact
-        <.styled_link href="mailto:hello@plausible.io" class={"font-medium " <> @link_class}>
-          hello@plausible.io
+        <.styled_link href="mailto:info@foundforai.com" class={"font-medium " <> @link_class}>
+          info@foundforai.com
         </.styled_link>
         to upgrade your subscription.
         """

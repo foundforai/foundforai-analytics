@@ -40,15 +40,7 @@ defmodule PlausibleWeb.Components.Billing.PlanBenefits do
 
   defp sites_api_benefit(assigns) do
     ~H"""
-    <p>
-      Sites API access for
-      <.link
-        class="text-indigo-500 hover:underline"
-        href="https://plausible.io/white-label-web-analytics"
-      >
-        reselling
-      </.link>
-    </p>
+    <p>Sites API access</p>
     """
   end
 end

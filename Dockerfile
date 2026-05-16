@@ -56,7 +56,7 @@ RUN mix release plausible
 
 # Main Docker Image
 FROM alpine:${ALPINE_VERSION}
-LABEL maintainer="plausible.io <hello@plausible.io>"
+LABEL maintainer="Found For AI <info@foundforai.com>"
 
 ARG BUILD_METADATA={}
 ENV BUILD_METADATA=$BUILD_METADATA

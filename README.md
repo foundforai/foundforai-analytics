@@ -25,13 +25,13 @@ You can self-host this yourself using Docker. See the original Plausible documen
 
 We offer a managed hosted version at **$49/month** with automatic updates, backups, and support.
 
-→ [Get Found For AI Analytics](https://your-site.com) *(update this link later)*
+→ [Get Found For AI Analytics](https://foundforai.com) *(update this link later)*
 
 ## Source Code & License
 
 This project is licensed under the **GNU Affero General Public License v3.0 (AGPL-3.0)**.
 
-- Full source code: [github.com/foundforai/analytics](https://github.com/foundforai/analytics)
+- Full source code: [github.com/foundforai/foundforai-analytics](https://github.com/foundforai/foundforai-analytics)
 - Original project: [github.com/plausible/analytics](https://github.com/plausible/analytics)
 
 Any modifications made to this fork are also released under AGPL-3.0.

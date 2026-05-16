@@ -60,7 +60,7 @@ defmodule Plausible.InstallationSupport.Verification.Diagnostics do
   @error_succeeds_only_after_cache_bust Error.new!(%{
                                           message: "We detected an issue with your site's cache",
                                           recommendation:
-                                            "Please clear the cache for your site to ensure that your visitors will load the latest version of your site that has Plausible correctly installed",
+                                            "Please clear the cache for your site to ensure that your visitors will load the latest version of your site that has Found For AI Analytics correctly installed",
                                           url:
                                             "https://plausible.io/docs/troubleshoot-integration#have-you-cleared-the-cache-of-your-site"
                                         })
@@ -123,7 +123,7 @@ defmodule Plausible.InstallationSupport.Verification.Diagnostics do
 
   @error_proxy_network_error Error.new!(%{
                                message:
-                                 "We got an unexpected response from the proxy you are using for Plausible",
+                                 "We got an unexpected response from the proxy you are using for Found For AI Analytics",
                                recommendation:
                                  "Please check that you've configured the proxied /event route correctly",
                                url: "https://plausible.io/docs/proxy/introduction"
@@ -194,7 +194,7 @@ defmodule Plausible.InstallationSupport.Verification.Diagnostics do
   @error_domain_not_found Error.new!(%{
                             message: "We couldn't find your website at <%= @attempted_url %>",
                             recommendation:
-                              "Please check that the domain you entered is correct and reachable publicly. If it's intentionally private, you'll need to verify that Plausible works manually",
+                              "Please check that the domain you entered is correct and reachable publicly. If it's intentionally private, you'll need to verify that Found For AI Analytics works manually",
                             url: @verify_manually_url
                           })
 
@@ -287,7 +287,7 @@ defmodule Plausible.InstallationSupport.Verification.Diagnostics do
     |> unhandled_error()
   end
 
-  @message_plausible_not_found "We couldn't detect Plausible on your site"
+  @message_plausible_not_found "We couldn't detect Found For AI Analytics on your site"
   @error_plausible_not_found_for_manual Error.new!(%{
                                           message: @message_plausible_not_found,
                                           recommendation:
@@ -297,7 +297,7 @@ defmodule Plausible.InstallationSupport.Verification.Diagnostics do
   @error_plausible_not_found_for_npm Error.new!(%{
                                        message: @message_plausible_not_found,
                                        recommendation:
-                                         "Please make sure you've initialized Plausible on your site, or verify your installation manually",
+                                         "Please make sure you've initialized Found For AI Analytics on your site, or verify your installation manually",
                                        url: @verify_manually_url
                                      })
   @error_plausible_not_found_for_gtm Error.new!(%{
@@ -321,7 +321,7 @@ defmodule Plausible.InstallationSupport.Verification.Diagnostics do
     end
   end
 
-  @unexpected_domain_message "Plausible test event is not for this site"
+  @unexpected_domain_message "Found For AI Analytics test event is not for this site"
   @error_unexpected_domain_for_manual Error.new!(%{
                                         message: @unexpected_domain_message,
                                         recommendation:
@@ -332,7 +332,7 @@ defmodule Plausible.InstallationSupport.Verification.Diagnostics do
   @error_unexpected_domain_for_npm Error.new!(%{
                                      message: @unexpected_domain_message,
                                      recommendation:
-                                       "Please check that you've initialized Plausible with the correct domain, or verify your installation manually",
+                                       "Please check that you've initialized Found For AI Analytics with the correct domain, or verify your installation manually",
                                      url: @verify_manually_url
                                    })
 

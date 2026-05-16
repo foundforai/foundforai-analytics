@@ -67,7 +67,7 @@ defmodule PlausibleWeb.BillingController do
           latest_enterprise_plan: latest_enterprise_plan,
           price: price,
           subscription_resumable: subscription_resumable?,
-          contact_link: "https://plausible.io/contact",
+          contact_link: "mailto:info@foundforai.com",
           skip_plausible_tracking: true
         )
     end
@@ -93,7 +93,7 @@ defmodule PlausibleWeb.BillingController do
 
       _ ->
         msg =
-          "Something went wrong with loading your plan change information. Please try again, or contact us at support@plausible.io if the issue persists."
+          "Something went wrong with loading your plan change information. Please try again, or contact us at info@foundforai.com if the issue persists."
 
         Sentry.capture_message("Error loading change plan preview",
           extra: %{
@@ -133,7 +133,7 @@ defmodule PlausibleWeb.BillingController do
               msg
 
             _ ->
-              "Something went wrong. Please try again or contact support at support@plausible.io"
+              "Something went wrong. Please try again or contact support at info@foundforai.com"
           end
 
         Sentry.capture_message("Error changing plans",

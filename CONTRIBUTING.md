@@ -1,12 +1,12 @@
 # Contributing
 
-We welcome everyone to contribute to Plausible. This document is to help you on setting up your environment, finding a task, and opening pull requests.
+We welcome everyone to contribute to Found For AI Analytics. This document is to help you on setting up your environment, finding a task, and opening pull requests.
 
 ## Development setup
 
 The easiest way to get up and running is to [install](https://docs.docker.com/get-docker/) and use Docker for running both Postgres and Clickhouse.
 
-Make sure Docker, Elixir, Erlang and Node.js are all installed on your development machine. The [`.tool-versions`](https://github.com/plausible/analytics/blob/master/.tool-versions) file is available to use with [asdf](https://github.com/asdf-vm/asdf) or similar tools.
+Make sure Docker, Elixir, Erlang and Node.js are all installed on your development machine. The [`.tool-versions`](https://github.com/foundforai/foundforai-analytics/blob/master/.tool-versions) file is available to use with [asdf](https://github.com/asdf-vm/asdf) or similar tools.
 
 ### Start the environment
 
@@ -56,8 +56,8 @@ Note: Since we are deleting the containers, be careful when deleting volumes wit
 
 ## Finding a task
 
-Bugs can be found in our [issue tracker](https://github.com/plausible/analytics/issues). Issues are usually up for grabs.
+Bugs can be found in our [issue tracker](https://github.com/foundforai/foundforai-analytics/issues). Issues are usually up for grabs.
 
-New features need to be discussed with the core team and the community first. If you're tackling a feature, please make sure it has been already discussed in the [Discussions tab](https://github.com/plausible/analytics/discussions). We kindly ask contributors to use the discussion comment section to propose a solution before opening a pull request.
+New features need to be discussed with the core team and the community first. If you're tackling a feature, please make sure it has been already discussed in the [Discussions tab](https://github.com/foundforai/foundforai-analytics/discussions). We kindly ask contributors to use the discussion comment section to propose a solution before opening a pull request.
 
 Pull requests without an associated issue or discussion may still be merged, but we will focus on changes that have already been talked through.

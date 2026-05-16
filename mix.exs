@@ -3,8 +3,8 @@ defmodule Plausible.MixProject do
 
   def project do
     [
-      name: "Plausible",
-      source_url: "https://github.com/plausible/analytics",
+      name: "Found For AI Analytics",
+      source_url: "https://github.com/foundforai/foundforai-analytics",
       docs: docs(),
       app: :plausible,
       version: System.get_env("APP_VERSION", "0.0.1"),
@@ -39,13 +39,12 @@ defmodule Plausible.MixProject do
   def application do
     [
       mod: {Plausible.Application, []},
-      extra_applications:
-        [
-          :logger,
-          :runtime_tools,
-          :tls_certificate_check,
-          :opentelemetry_exporter
-        ] ++ if(Mix.env() in [:dev, :load], do: [:tools, :observer, :wx], else: [])
+      extra_applications: [
+        :logger,
+        :runtime_tools,
+        :tls_certificate_check,
+        :opentelemetry_exporter
+      ]
     ]
   end
 

@@ -266,7 +266,7 @@ defmodule PlausibleWeb.SiteController do
       Repo.delete!(site.google_auth)
     end
 
-    put_flash(conn, :success, "Google account unlinked from Plausible")
+    put_flash(conn, :success, "Google account unlinked from Found For AI Analytics")
     redirect(conn, to: Routes.site_path(conn, :settings_integrations, site.domain))
   end
 

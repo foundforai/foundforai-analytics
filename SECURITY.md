@@ -2,14 +2,16 @@
 
 ## Supported Versions
 
-We only add security updates to the latest MAJOR.MINOR version of the project. No security updates are backported to previous versions. If you
-want be up to date on security patches, make sure your Plausible image is up to date with `plausible/analytics:latest`
+Security updates are applied to the latest release of Found For AI Analytics. Older versions are not backported. To stay current on security patches, make sure your deployment is built from the latest release of this repository.
 
 ## Reporting a Vulnerability
 
-Our software is updated several times per week and we also have a way for you to [report any security vulnerabilities](https://plausible.io/vulnerability-disclosure-program). A more detailed overview about our security practices can be found on [plausible.io/security](https://plausible.io/security).
+If you've found a security vulnerability in Found For AI Analytics, please disclose it responsibly by emailing a summary to **info@foundforai.com**. We'll review the report and respond as quickly as we can.
 
-If you've found a security vulnerability with the Plausible codebase, you can disclose it responsibly by sending a summary to security@plausible.io.
-We will review the potential threat and fix it as fast as we can.
+Please do **not** open public GitHub issues for security vulnerabilities.
 
-While we do not have a bounty program in place yet, we are incredibly thankful for people who take the time to share their findings with us. Whether it's a tiny bug that you've found or a security vulnerability, all reports help us to continuously improve Plausible for everyone. Thank you!
+While we do not have a bounty program in place yet, we are grateful to anyone who takes the time to share their findings. Whether it's a small bug or a serious vulnerability, all reports help us improve Found For AI Analytics for everyone. Thank you!
+
+## Upstream
+
+Found For AI Analytics is an independent fork of [Plausible Analytics](https://github.com/plausible/analytics). For vulnerabilities in upstream Plausible code that has not been modified by this fork, you may also wish to report them to the upstream maintainers at security@plausible.io — but reports about *this* fork should go to info@foundforai.com.

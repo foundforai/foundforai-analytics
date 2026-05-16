@@ -1,6 +1,6 @@
 # Code of Conduct
 
-Plausible, both the open-source project and the company that develops it, pledges to be a community with a healthy and friendly environment. What follows is a set of guidelines on how we get there.
+Found For AI Analytics, both the open-source project and the team that maintains this fork, pledges to be a community with a healthy and friendly environment. What follows is a set of guidelines on how we get there.
 
 
 ## Our Standards
@@ -36,9 +36,7 @@ comments, commits, code, wiki edits, issues, and other contributions that are
 not aligned to this Code of Conduct, and will communicate reasons for moderation
 decisions when appropriate.
 
-The community leaders at this time are:
-* Marko Saric (marko@plausible.io)
-* Uku Taht (uku@plausible.io)
+Community leaders can be reached at info@foundforai.com.
 
 ## Scope
 

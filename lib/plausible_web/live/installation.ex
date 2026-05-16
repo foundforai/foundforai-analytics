@@ -107,14 +107,14 @@ defmodule PlausibleWeb.Live.Installation do
     ~H"""
     <div>
       <PlausibleWeb.Components.FirstDashboardLaunchBanner.set :if={@site_created?} site={@site} />
-      <PlausibleWeb.Components.FlowProgress.render flow={@flow} current_step="Install Plausible" />
+      <PlausibleWeb.Components.FlowProgress.render flow={@flow} current_step="Install Found For AI Analytics" />
 
       <.focus_box>
         <.async_result :let={recommended_installation_type} assign={@recommended_installation_type}>
           <:loading>
             <div class="text-center text-gray-500">
               {if(@flow == Flows.review(),
-                do: "Scanning your site to detect how Plausible is integrated...",
+                do: "Scanning your site to detect how Found For AI Analytics is integrated...",
                 else: "Determining the simplest integration path for your website..."
               )}
             </div>

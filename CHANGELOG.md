@@ -1,5 +1,7 @@
 # Changelog
 
+> **Note:** This file documents the history of the upstream [Plausible Analytics](https://github.com/plausible/analytics) project, which Found For AI Analytics is forked from. For changes specific to this fork, see [GitHub Releases](https://github.com/foundforai/foundforai-analytics/releases).
+
 All notable changes to this project will be documented in this file.
 
 ## Unreleased

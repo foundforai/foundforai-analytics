@@ -16,25 +16,8 @@ defmodule PlausibleWeb.LayoutView do
     PlausibleWeb.Endpoint.websocket_url()
   end
 
-  defmodule JWT do
-    use Joken.Config
-  end
-
-  def feedback_link(user) do
-    token_params = %{
-      "id" => user.id,
-      "email" => user.email,
-      "name" => user.name,
-      "imageUrl" => Plausible.Auth.User.profile_img_url(user)
-    }
-
-    case JWT.generate_and_sign(token_params) do
-      {:ok, token, _claims} ->
-        "https://feedback.plausible.io/sso/#{token}?returnUrl=https://feedback.plausible.io"
-
-      _ ->
-        "https://feedback.plausible.io"
-    end
+  def feedback_link(_user) do
+    "mailto:info@foundforai.com?subject=Feedback%20on%20Found%20For%20AI%20Analytics"
   end
 
   def home_dest(conn) do

@@ -31,40 +31,6 @@
         <%= cond do %>
           <% @conn.assigns[:current_user] -> %>
             <ul class="flex items-center gap-2 w-full sm:w-auto">
-              <li :if={
-                ee?() && @conn.assigns[:site] &&
-                  Plausible.Auth.super_admin?(@conn.assigns[:current_user])
-              }>
-                <.styled_link
-                  class="text-sm font-medium"
-                  href={"/cs/sites/site/#{@conn.assigns.site.id}"}
-                  new_tab={true}
-                >
-                  CS
-                </.styled_link>
-              </li>
-              <li
-                :if={
-                  ee?() and Plausible.Teams.on_trial?(@conn.assigns[:current_team]) and
-                    (not Plausible.Teams.setup?(@conn.assigns[:current_team]) or
-                       @conn.assigns[:current_team_role] in Plausible.Billing.allowed_roles())
-                }
-                class="hidden sm:block"
-              >
-                <div class="flex items-center p-1 rounded-lg bg-yellow-100 dark:bg-yellow-600/35 overflow-hidden">
-                  <span class="px-3 text-sm font-medium text-gray-900 dark:text-gray-100">
-                    {trial_notification(@conn.assigns[:current_team])}
-                  </span>
-                  <.button_link
-                    href={Routes.settings_path(@conn, :subscription)}
-                    theme="yellow"
-                    mt?={false}
-                    class="!px-3 !py-2"
-                  >
-                    Upgrade
-                  </.button_link>
-                </div>
-              </li>
               <li class="w-full sm:w-auto">
                 <.dropdown>
                   <:button class="flex items-center gap-2 pl-3 pr-1.5 py-2 rounded-md transition-colors duration-150 hover:bg-gray-100 dark:hover:bg-gray-800">
@@ -124,7 +90,7 @@
                       :if={ee?()}
                       class="!flex justify-between gap-x-12"
                       new_tab
-                      href="https://plausible.io/contact"
+                      href="mailto:info@foundforai.com"
                     >
                       Contact support
                     </.dropdown_item>

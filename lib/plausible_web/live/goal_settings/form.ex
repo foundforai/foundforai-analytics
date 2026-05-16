@@ -440,7 +440,7 @@ defmodule PlausibleWeb.Live.GoalSettings.Form do
     >
       <div id="event-fields">
         <div class="text-sm pb-6 text-gray-500 dark:text-gray-400 text-justify rounded-md">
-          Custom Events are not tracked by default - you have to configure them on your site to be sent to Plausible. See examples and learn more in <.styled_link
+          Custom Events are not tracked by default - you have to configure them on your site to be sent to Found For AI Analytics. See examples and learn more in <.styled_link
             href="https://plausible.io/docs/custom-event-goals"
             new_tab={true}
           >

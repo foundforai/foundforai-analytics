@@ -15,7 +15,7 @@ defmodule PlausibleWeb.Email do
     priority_email()
     |> to(user)
     |> tag("activation-email")
-    |> subject("#{code} is your Plausible email verification code")
+    |> subject("#{code} is your Found For AI Analytics email verification code")
     |> render("activation_email.html", user: user, code: code)
   end
 
@@ -23,7 +23,7 @@ defmodule PlausibleWeb.Email do
     base_email()
     |> to(user)
     |> tag("welcome-email")
-    |> subject("Welcome to Plausible")
+    |> subject("Welcome to Found For AI Analytics")
     |> render("welcome_email.html", user: user)
   end
 
@@ -62,7 +62,7 @@ defmodule PlausibleWeb.Email do
     base_email()
     |> to(user)
     |> tag("check-stats-email")
-    |> subject("How Plausible is different")
+    |> subject("How Found For AI Analytics is different")
     |> render("check_stats_email.html", user: user)
   end
 
@@ -70,7 +70,7 @@ defmodule PlausibleWeb.Email do
     priority_email(%{layout: nil})
     |> to(email)
     |> tag("password-reset-email")
-    |> subject("Plausible password reset")
+    |> subject("Found For AI Analytics password reset")
     |> render("password_reset_email.html", reset_link: reset_link)
   end
 
@@ -78,7 +78,7 @@ defmodule PlausibleWeb.Email do
     priority_email()
     |> to(user)
     |> tag("two-factor-enabled-email")
-    |> subject("Plausible Two-Factor Authentication enabled")
+    |> subject("Found For AI Analytics Two-Factor Authentication enabled")
     |> render("two_factor_enabled_email.html", user: user)
   end
 
@@ -86,7 +86,7 @@ defmodule PlausibleWeb.Email do
     priority_email()
     |> to(user)
     |> tag("two-factor-disabled-email")
-    |> subject("Plausible Two-Factor Authentication disabled")
+    |> subject("Found For AI Analytics Two-Factor Authentication disabled")
     |> render("two_factor_disabled_email.html", user: user)
   end
 
@@ -94,7 +94,7 @@ defmodule PlausibleWeb.Email do
     base_email()
     |> to(user)
     |> tag("trial-one-week-reminder")
-    |> subject("Your Plausible trial ends in one week")
+    |> subject("Your Found For AI Analytics trial ends in one week")
     |> render("trial_one_week_reminder.html", user: user, team: team)
   end
 
@@ -102,7 +102,7 @@ defmodule PlausibleWeb.Email do
     base_email()
     |> to(user)
     |> tag("trial-ending-tomorrow")
-    |> subject("Your Plausible trial ends tomorrow")
+    |> subject("Your Found For AI Analytics trial ends tomorrow")
     |> render("trial_ending_tomorrow.html",
       user: user,
       team: team,
@@ -116,7 +116,7 @@ defmodule PlausibleWeb.Email do
     base_email()
     |> to(user)
     |> tag("trial-ending-today")
-    |> subject("Your Plausible trial ends today")
+    |> subject("Your Found For AI Analytics trial ends today")
     |> render("trial_ending_today.html",
       user: user,
       team: team,
@@ -130,7 +130,7 @@ defmodule PlausibleWeb.Email do
     base_email()
     |> to(user)
     |> tag("trial-over-email")
-    |> subject("Your Plausible trial has expired")
+    |> subject("Your Found For AI Analytics trial has expired")
     |> render("trial_over_email.html",
       user: user,
       team: team,
@@ -181,7 +181,7 @@ defmodule PlausibleWeb.Email do
     priority_email()
     |> to(user)
     |> tag("over-limit")
-    |> subject("[Action required] You have outgrown your Plausible subscription tier")
+    |> subject("[Action required] You have outgrown your Found For AI Analytics subscription tier")
     |> render("over_limit.html", %{
       user: user,
       team: team,
@@ -192,7 +192,7 @@ defmodule PlausibleWeb.Email do
 
   def enterprise_over_limit_internal_email(user, pageview_usage, site_usage, site_allowance) do
     base_email(%{layout: nil})
-    |> to("enterprise@plausible.io")
+    |> to("info@foundforai.com")
     |> tag("enterprise-over-limit")
     |> subject("#{user.email} has outgrown their enterprise plan")
     |> render("enterprise_over_limit_internal.html", %{
@@ -207,7 +207,7 @@ defmodule PlausibleWeb.Email do
     priority_email()
     |> to(user)
     |> tag("dashboard-locked")
-    |> subject("[Action required] Your Plausible dashboard is now locked")
+    |> subject("[Action required] Your Found For AI Analytics dashboard is now locked")
     |> render("dashboard_locked.html", %{
       user: user,
       team: team,
@@ -222,7 +222,7 @@ defmodule PlausibleWeb.Email do
     priority_email()
     |> to(owner)
     |> tag("yearly-renewal")
-    |> subject("Your Plausible subscription is up for renewal")
+    |> subject("Your Found For AI Analytics subscription is up for renewal")
     |> render("yearly_renewal_notification.html", %{
       user: owner,
       team: team,
@@ -243,7 +243,7 @@ defmodule PlausibleWeb.Email do
     priority_email()
     |> to(owner)
     |> tag("yearly-expiration")
-    |> subject("Your Plausible subscription is about to expire")
+    |> subject("Your Found For AI Analytics subscription is about to expire")
     |> render("yearly_expiration_notification.html", %{
       user: owner,
       team: team,
@@ -256,7 +256,7 @@ defmodule PlausibleWeb.Email do
     base_email()
     |> to(user.email)
     |> tag("cancelled-email")
-    |> subject("Mind sharing your thoughts on Plausible?")
+    |> subject("Mind sharing your thoughts on Found For AI Analytics?")
     |> render("cancellation_email.html", user: user)
   end
 
@@ -540,7 +540,7 @@ defmodule PlausibleWeb.Email do
     Map.new()
     |> Map.put(:layout, nil)
     |> base_email()
-    |> to("bugs@plausible.io")
+    |> to("info@foundforai.com")
     |> put_param("ReplyTo", reported_by)
     |> tag("sentry")
     |> subject("Feedback to Sentry Trace #{trace_id}")

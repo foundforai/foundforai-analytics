@@ -6,19 +6,19 @@ defmodule PlausibleWeb.Flows do
 
   @flows %{
     review: [
-      "Install Plausible",
+      "Install Found For AI Analytics",
       "Verify installation"
     ],
     domain_change: [
       "Set up new domain",
-      "Install Plausible",
+      "Install Found For AI Analytics",
       "Verify installation"
     ],
     register: [
       "Register",
       "Activate account",
       "Add site info",
-      "Install Plausible",
+      "Install Found For AI Analytics",
       "Verify installation"
     ],
     invitation: [
@@ -27,7 +27,7 @@ defmodule PlausibleWeb.Flows do
     ],
     provisioning: [
       "Add site info",
-      "Install Plausible",
+      "Install Found For AI Analytics",
       "Verify installation"
     ]
   }

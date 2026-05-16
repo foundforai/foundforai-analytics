@@ -421,7 +421,7 @@ defmodule PlausibleWeb.Components.Billing.PlanBox do
   defp contact_button(assigns) do
     ~H"""
     <.link
-      href="https://plausible.io/contact"
+      href="mailto:info@foundforai.com"
       class={[
         "mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 bg-gray-800 hover:bg-gray-700 text-white dark:bg-indigo-600 dark:hover:bg-indigo-500",
         @class

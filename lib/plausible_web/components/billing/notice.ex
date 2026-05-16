@@ -178,7 +178,7 @@ defmodule PlausibleWeb.Components.Billing.Notice do
     ~H"""
     <aside class={@class}>
       <.notice title={Plausible.Billing.subscription_past_due_notice_title()}>
-        There was a problem with your latest payment. Please update your payment information to keep using Plausible.<.link
+        There was a problem with your latest payment. Please update your payment information to keep using Found For AI Analytics.<.link
           href={@subscription.update_url}
           class="whitespace-nowrap font-semibold"
         > Update billing info <span aria-hidden="true"> &rarr;</span></.link>
@@ -201,7 +201,7 @@ defmodule PlausibleWeb.Components.Billing.Notice do
         title={Plausible.Billing.subscription_paused_notice_title()}
         theme={:red}
       >
-        Your subscription is paused due to failed payments. Please provide valid payment details to keep using Plausible.<.link
+        Your subscription is paused due to failed payments. Please provide valid payment details to keep using Found For AI Analytics.<.link
           href={@subscription.update_url}
           class="whitespace-nowrap font-semibold"
         > Update billing info <span aria-hidden="true"> &rarr;</span></.link>
@@ -246,8 +246,8 @@ defmodule PlausibleWeb.Components.Billing.Notice do
           class="shadow-md dark:shadow-none mt-4"
         >
           {@message} To exclude pending sites from your usage, please go to
-          <.link href="https://plausible.io/sites" class="whitespace-nowrap font-semibold">
-            plausible.io/sites
+          <.link href="/sites" class="whitespace-nowrap font-semibold">
+            your sites page
           </.link>
           and reject the invitations.
         </.notice>
@@ -535,12 +535,7 @@ defmodule PlausibleWeb.Components.Billing.Notice do
 
     ~H"""
     <p :if={@loses_grandfathering?} class="mt-2">
-      Please also note that by letting your subscription expire, you lose access to our grandfathered terms. If you want to subscribe again after that, your account will be offered the <.link
-        href="https://plausible.io/#pricing"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="underline"
-      >latest pricing</.link>.
+      Please also note that by letting your subscription expire, you lose access to our grandfathered terms. If you want to subscribe again after that, your account will be offered the latest pricing.
     </p>
     """
   end
