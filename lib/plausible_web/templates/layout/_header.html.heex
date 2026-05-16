@@ -11,7 +11,7 @@
               )
             }
             class="w-30 hidden dark:inline"
-            alt="Plausible logo"
+            alt="Found For AI Analytics"
             loading="lazy"
           />
           <img
@@ -22,7 +22,7 @@
               )
             }
             class="w-30 inline dark:hidden"
-            alt="Plausible logo"
+            alt="Found For AI Analytics"
             loading="lazy"
           />
         </a>
@@ -94,7 +94,6 @@
                     <.dropdown_item href={Routes.settings_path(@conn, :index)}>
                       Account settings
                     </.dropdown_item>
-
                     <div :if={@my_team && @my_team.id == @current_team.id}>
                       <.dropdown_item class="flex" href={Routes.team_setup_path(@conn, :setup)}>
                         <span data-test="create-a-team-cta" class="flex-1">
@@ -103,7 +102,6 @@
                       </.dropdown_item>
                       <.dropdown_divider />
                     </div>
-
                     <div :if={Plausible.Teams.setup?(@current_team)}>
                       <.dropdown_item
                         class="flex"
@@ -142,9 +140,9 @@
                       :if={ce?()}
                       class="!flex justify-between gap-x-12"
                       new_tab
-                      href="https://github.com/plausible/analytics"
+                      href="https://github.com/foundforai/foundforai-analytics"
                     >
-                      Github repo
+                      GitHub
                     </.dropdown_item>
                     <.dropdown_item href="/logout">Log out</.dropdown_item>
                   </:menu>
