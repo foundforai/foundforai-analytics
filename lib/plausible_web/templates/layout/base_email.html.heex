@@ -2,13 +2,15 @@
 <br /><br />
 
 {@inner_content}
+
 <br /><br />
 
-<%= if ee?() do %>
-  Regards,<br /> The Plausible Team 💌 <br /><br />
+<% if ee?() do %>
+  Regards,<br /> The Found For AI Team ❤️<br /><br />
 <% end %>
+
 -- <br /><br />
 <a href={plausible_url()}>{plausible_url()}</a>
 <br />
 
-<p :if={ee?()} phx-no-curly-interpolation>{{{ pm:unsubscribe }}}</p>
+<p :if={ee?()} phx-no-curly-interpolation>{{ pm:unsubscribe }}</p>
