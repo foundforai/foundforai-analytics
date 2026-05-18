@@ -43,9 +43,9 @@ defmodule PlausibleWeb.Endpoint do
   static_paths =
     on_ee do
       # NOTE: The Cloud uses custom robots.txt from https://github.com/plausible/website: https://plausible.io/robots.txt
-      static_paths
+      static_paths ++ ["llms.txt", "sitemap.xml"]
     else
-      static_paths ++ ["robots.txt"]
+      static_paths ++ ["robots.txt", "llms.txt", "sitemap.xml"]
     end
 
   static_compression =

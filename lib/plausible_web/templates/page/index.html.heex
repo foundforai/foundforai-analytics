@@ -1,48 +1,296 @@
-<.focus_box>
-  <:title>
-    Track how AI recommends your business
-  </:title>
+<!-- HERO -->
+<section class="bg-gray-50 dark:bg-gray-900 py-16 sm:py-24">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <span class="inline-block bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
+      Self-serve · 7-day free trial
+    </span>
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-gray-100 tracking-tight leading-tight mb-6">
+      Track how AI recommends your business.
+    </h1>
+    <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-4">
+      Privacy-friendly web analytics that show how ChatGPT, Claude,
+      Perplexity, and Gemini are sending — or not sending — traffic
+      to your site. Plus a monthly DIY AEO report you can act on.
+    </p>
+    <p class="text-base text-gray-500 dark:text-gray-400 mb-8">
+      <b class="text-gray-900 dark:text-gray-100">$49/month</b>
+      · 7-day free trial · No setup call · Cancel anytime
+    </p>
+    <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
+      <a
+        href="https://buy.stripe.com/8x2eV78Ws36B0yA0WZ3Nm00"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-3 rounded-lg text-base shadow-sm transition"
+      >
+        Start your 7-day free trial →
+      </a>
+      <a
+        href={Routes.auth_path(@conn, :login)}
+        class="inline-flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 font-medium px-6 py-3 rounded-lg text-base transition"
+      >
+        Already have an account? Log in
+      </a>
+    </div>
+  </div>
+</section>
 
-  <p>
-    Privacy-friendly analytics for the AI era. See exactly how
-    ChatGPT, Claude, Perplexity, and Gemini describe you — and get a
-    monthly DIY AEO report so you can actually move the needle.
-  </p>
+<!-- WHY USE -->
+<section class="bg-white dark:bg-gray-950 py-16 sm:py-24">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+        Why use Found For AI Analytics?
+      </h2>
+      <p class="text-lg text-gray-600 dark:text-gray-300">
+        Google Analytics is overkill, slow to load, and doesn't tell
+        you what AI assistants are doing. Found For AI Analytics is
+        lightweight, privacy-friendly, and built for the way people
+        actually find businesses now.
+      </p>
+    </div>
 
-  <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">
-    <b class="text-gray-900 dark:text-gray-100">$49/month</b>
-    · 7-day free trial · No setup call · Cancel anytime
-  </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div>
+        <div class="flex items-center gap-2 mb-2">
+          <Heroicons.sparkles class="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+          <h3 class="font-semibold text-gray-900 dark:text-gray-100">
+            Monitor traffic from AI tools
+          </h3>
+        </div>
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-6">
+          See which AI assistants — ChatGPT, Claude, Perplexity, Gemini — are sending visitors. Identify the pages they recommend and the conversions those visitors complete.
+        </p>
+      </div>
 
-  <div class="mt-6">
-    <.button_link
+      <div>
+        <div class="flex items-center gap-2 mb-2">
+          <Heroicons.chart_bar class="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+          <h3 class="font-semibold text-gray-900 dark:text-gray-100">
+            Real-time dashboard
+          </h3>
+        </div>
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-6">
+          Live traffic updates every 30 seconds. Watch the impact of your changes the moment they ship.
+        </p>
+      </div>
+
+      <div>
+        <div class="flex items-center gap-2 mb-2">
+          <Heroicons.document_text class="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+          <h3 class="font-semibold text-gray-900 dark:text-gray-100">
+            Monthly DIY AEO report
+          </h3>
+        </div>
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-6">
+          A focused, plain-English report each month: what AI sees about your business, what's missing, and the highest-leverage fixes to ship next.
+        </p>
+      </div>
+
+      <div>
+        <div class="flex items-center gap-2 mb-2">
+          <Heroicons.shield_check class="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+          <h3 class="font-semibold text-gray-900 dark:text-gray-100">
+            Privacy-friendly by default
+          </h3>
+        </div>
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-6">
+          No cookies, no personal data, no consent banners required. GDPR, CCPA, and PECR friendly out of the box.
+        </p>
+      </div>
+
+      <div>
+        <div class="flex items-center gap-2 mb-2">
+          <Heroicons.bolt class="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+          <h3 class="font-semibold text-gray-900 dark:text-gray-100">
+            Lightweight script
+          </h3>
+        </div>
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-6">
+          Under 1 KB. Won't slow down your site. One line of HTML in your &lt;head&gt; and you're tracking.
+        </p>
+      </div>
+
+      <div>
+        <div class="flex items-center gap-2 mb-2">
+          <Heroicons.flag class="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+          <h3 class="font-semibold text-gray-900 dark:text-gray-100">
+            Codeless goals + conversions
+          </h3>
+        </div>
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-6">
+          Turn any page into a goal. Track form submissions, file downloads, and outbound clicks without writing custom event code.
+        </p>
+      </div>
+
+      <div>
+        <div class="flex items-center gap-2 mb-2">
+          <Heroicons.no_symbol class="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+          <h3 class="font-semibold text-gray-900 dark:text-gray-100">
+            Built-in bot filtering
+          </h3>
+        </div>
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-6">
+          Bots, referrer spam, and data center traffic are filtered out automatically so your stats reflect real humans.
+        </p>
+      </div>
+
+      <div>
+        <div class="flex items-center gap-2 mb-2">
+          <Heroicons.funnel class="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+          <h3 class="font-semibold text-gray-900 dark:text-gray-100">
+            Conversion funnels
+          </h3>
+        </div>
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-6">
+          Measure how visitors move through key steps on your site. See where they drop off and where AI-referred traffic converts best.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="bg-gray-50 dark:bg-gray-900 py-16 sm:py-24">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+        How it works
+      </h2>
+      <p class="text-lg text-gray-600 dark:text-gray-300">
+        From sign-up to your first AI traffic insight in under five minutes.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-indigo-600 text-white font-bold text-lg mb-4">
+          1
+        </div>
+        <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100 mb-2">
+          Start your free trial
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400">
+          One-click trial via Stripe. We auto-create your account and email you a one-time login link.
+        </p>
+      </div>
+      <div class="text-center">
+        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-indigo-600 text-white font-bold text-lg mb-4">
+          2
+        </div>
+        <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100 mb-2">
+          Install one line of HTML
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400">
+          Paste our tracking snippet into your &lt;head&gt; (or use the WordPress plugin, GTM template, or NPM module). Under 1 KB.
+        </p>
+      </div>
+      <div class="text-center">
+        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-indigo-600 text-white font-bold text-lg mb-4">
+          3
+        </div>
+        <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100 mb-2">
+          Watch the data come in
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400">
+          Real-time visitors, AI-source breakdown, top pages, and conversion goals — all in a single dashboard. Plus a monthly DIY AEO report.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="bg-white dark:bg-gray-950 py-16 sm:py-24">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-10 text-center">
+      Common questions
+    </h2>
+
+    <div class="space-y-6">
+      <details class="group bg-gray-50 dark:bg-gray-900 rounded-lg p-6">
+        <summary class="font-semibold text-gray-900 dark:text-gray-100 cursor-pointer list-none flex items-center justify-between">
+          <span>What's actually different from Google Analytics?</span>
+          <span class="text-gray-400 group-open:rotate-180 transition">▾</span>
+        </summary>
+        <p class="text-gray-600 dark:text-gray-400 mt-3 leading-7">
+          Three things: it's privacy-friendly so you don't need cookie banners, it surfaces AI assistant traffic (ChatGPT, Claude, Perplexity, Gemini) as a first-class source, and it ships with a monthly DIY AEO report. Google Analytics gives you a fire-hose; we give you the small set of signals that actually move the needle.
+        </p>
+      </details>
+
+      <details class="group bg-gray-50 dark:bg-gray-900 rounded-lg p-6">
+        <summary class="font-semibold text-gray-900 dark:text-gray-100 cursor-pointer list-none flex items-center justify-between">
+          <span>Do I need to install anything complicated?</span>
+          <span class="text-gray-400 group-open:rotate-180 transition">▾</span>
+        </summary>
+        <p class="text-gray-600 dark:text-gray-400 mt-3 leading-7">
+          No. Paste one line of HTML into your &lt;head&gt; tag. We also support WordPress (plugin), Google Tag Manager (template), and NPM (for React/Next/Vue apps). Most installs take under three minutes.
+        </p>
+      </details>
+
+      <details class="group bg-gray-50 dark:bg-gray-900 rounded-lg p-6">
+        <summary class="font-semibold text-gray-900 dark:text-gray-100 cursor-pointer list-none flex items-center justify-between">
+          <span>What's in the monthly DIY AEO report?</span>
+          <span class="text-gray-400 group-open:rotate-180 transition">▾</span>
+        </summary>
+        <p class="text-gray-600 dark:text-gray-400 mt-3 leading-7">
+          A plain-English audit of how AI assistants currently describe your business, gaps in your structured data, and the two or three highest-leverage fixes to ship this month. You implement them yourself. If you want us to do the implementation, upgrade to the Starter plan on foundforai.com.
+        </p>
+      </details>
+
+      <details class="group bg-gray-50 dark:bg-gray-900 rounded-lg p-6">
+        <summary class="font-semibold text-gray-900 dark:text-gray-100 cursor-pointer list-none flex items-center justify-between">
+          <span>Can I cancel anytime?</span>
+          <span class="text-gray-400 group-open:rotate-180 transition">▾</span>
+        </summary>
+        <p class="text-gray-600 dark:text-gray-400 mt-3 leading-7">
+          Yes. Month-to-month, no long-term contract, cancel in one click in Stripe. If you cancel during the 7-day trial, you're never charged.
+        </p>
+      </details>
+
+      <details class="group bg-gray-50 dark:bg-gray-900 rounded-lg p-6">
+        <summary class="font-semibold text-gray-900 dark:text-gray-100 cursor-pointer list-none flex items-center justify-between">
+          <span>Is this GDPR / CCPA compliant?</span>
+          <span class="text-gray-400 group-open:rotate-180 transition">▾</span>
+        </summary>
+        <p class="text-gray-600 dark:text-gray-400 mt-3 leading-7">
+          Yes. We don't use cookies, don't collect personal information, and don't fingerprint visitors. You don't need a cookie banner or consent prompt to run Found For AI Analytics on your site.
+        </p>
+      </details>
+
+      <details class="group bg-gray-50 dark:bg-gray-900 rounded-lg p-6">
+        <summary class="font-semibold text-gray-900 dark:text-gray-100 cursor-pointer list-none flex items-center justify-between">
+          <span>What if I want it done for me?</span>
+          <span class="text-gray-400 group-open:rotate-180 transition">▾</span>
+        </summary>
+        <p class="text-gray-600 dark:text-gray-400 mt-3 leading-7">
+          Check out the Starter and Growth plans on
+          <a href="https://foundforai.com/pricing" class="underline">foundforai.com</a>. Same analytics, plus we do the AI Data Layer setup, schema work, and monthly optimizations for you.
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="bg-gradient-to-br from-indigo-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 py-16 sm:py-24">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+      Ready to see what AI says about your business?
+    </h2>
+    <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+      Start your 7-day free trial. No setup call. Cancel anytime in Stripe.
+    </p>
+    <a
       href="https://buy.stripe.com/8x2eV78Ws36B0yA0WZ3Nm00"
       target="_blank"
       rel="noopener noreferrer"
-      mt?={false}
-      class="w-full"
+      class="inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-4 rounded-lg text-lg shadow-sm transition"
     >
-      Start your 7-day free trial →
-    </.button_link>
+      Start your free trial →
+    </a>
+    <p class="text-sm text-gray-500 dark:text-gray-400 mt-6">
+      $49/mo · 7-day free trial · No setup call · Cancel anytime
+    </p>
   </div>
-
-  <:footer>
-    <.focus_list>
-      <:item>
-        <.styled_link href={Routes.auth_path(@conn, :login)}>
-          Already have an account? Log in
-        </.styled_link>
-      </:item>
-      <:item>
-        <.styled_link href="https://foundforai.com/pricing" new_tab={true}>
-          Want done-for-you instead? See the AI Operator Subscription
-        </.styled_link>
-      </:item>
-      <:item>
-        <.styled_link href="https://x.com/FoundForAI" new_tab={true}>
-          Follow on X
-        </.styled_link>
-      </:item>
-    </.focus_list>
-  </:footer>
-</.focus_box>
+</section>

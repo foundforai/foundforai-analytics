@@ -1,2 +1,12 @@
+# Found For AI Analytics — analytics.foundforai.com
+#
+# We intentionally allow crawling of the public marketing surface
+# (landing page, welcome page, future docs). Dashboard/auth/api routes
+# are protected by per-page <meta name="robots" content="noindex">
+# headers set by the NoRobots plug, so we don't need to enumerate
+# private routes here.
+
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://analytics.foundforai.com/sitemap.xml

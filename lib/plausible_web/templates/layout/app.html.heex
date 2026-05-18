@@ -4,23 +4,54 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Found For AI Analytics is a lightweight, privacy-friendly web analytics tool. Your website data is 100% yours."
-    />
+
+    <% page_title =
+      assigns[:title] || "Found For AI Analytics · Privacy-friendly analytics for the AI era" %>
+    <% page_description =
+      assigns[:description] ||
+        "Privacy-friendly web analytics that show how ChatGPT, Claude, Perplexity, and Gemini are sending — or not sending — traffic to your business. $49/mo, 7-day free trial." %>
+    <% canonical_url =
+      assigns[:canonical_url] ||
+        "https://analytics.foundforai.com" <> @conn.request_path %>
+    <% og_image =
+      assigns[:og_image] ||
+        Routes.static_url(@conn, "/images/ee/apple-touch-icon.png") %>
+
+    <title>{page_title}</title>
+    <meta name="description" content={page_description} />
+    <link rel="canonical" href={canonical_url} />
+
     <%= if assigns[:connect_live_socket] do %>
       <meta name="csrf-token" content={Plug.CSRFProtection.get_csrf_token()} />
       <meta name="websocket-url" content={websocket_url()} />
     <% end %>
     <meta name="robots" content={@conn.private.robots} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={page_title} />
+    <meta property="og:description" content={page_description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical_url} />
+    <meta property="og:image" content={og_image} />
+    <meta property="og:site_name" content="Found For AI Analytics" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@FoundForAI" />
+    <meta name="twitter:title" content={page_title} />
+    <meta name="twitter:description" content={page_description} />
+    <meta name="twitter:image" content={og_image} />
+
     <PlausibleWeb.Components.Layout.favicon conn={@conn} />
-    <title>
-      {assigns[:title] ||
-        "Found For AI Analytics · Privacy-friendly web analytics"}
-    </title>
     <link rel="stylesheet" href={Routes.static_path(@conn, "/css/app.css")} />
     <PlausibleWeb.Components.Layout.theme_script {Map.take(assigns, [:current_user, :theme])} />
     {render("_tracking.html", assigns)}
+
+    <%= if assigns[:json_ld] do %>
+      <script type="application/ld+json">
+        {raw(Jason.encode!(@json_ld))}
+      </script>
+    <% end %>
   </head>
   <body
     class={[

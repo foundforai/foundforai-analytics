@@ -1,0 +1,36 @@
+# Found For AI Analytics
+
+> Privacy-friendly web analytics that show how AI assistants
+> (ChatGPT, Claude, Perplexity, Gemini) are recommending your
+> business. $49/month with a 7-day free trial. No cookies, no
+> setup call, cancel anytime. Includes a monthly DIY AEO
+> (Answer Engine Optimization) report.
+
+Found For AI Analytics is a self-serve web analytics product for
+small businesses and owner-operators who want to understand how
+generative AI assistants describe and recommend them. It is the
+self-serve tier of [Found For AI](https://foundforai.com), which
+also offers done-for-you AEO services at higher tiers.
+
+## Product
+
+- [Marketing landing page](https://analytics.foundforai.com/): product overview, features, pricing, FAQ.
+- [Start free trial](https://buy.stripe.com/8x2eV78Ws36B0yA0WZ3Nm00): 7-day free trial of the $49/month DIY tier via Stripe.
+- [Post-checkout welcome](https://analytics.foundforai.com/welcome): page customers see after starting their trial.
+- [Log in](https://analytics.foundforai.com/login): existing customers.
+
+## Pricing
+
+- **DIY**: $49/month (or $490/year, 2 months free). 7-day free trial on monthly, 30-day free trial on annual. Self-serve analytics dashboard plus a monthly DIY AEO report.
+- **Starter** ($299/month) and **Growth** ($599/month) tiers exist at [foundforai.com/pricing](https://foundforai.com/pricing). Those tiers add a one-time $997 onboarding plus done-for-you AEO work.
+
+## Related products and resources
+
+- [Found For AI main site](https://foundforai.com): the parent brand, where the done-for-you Starter and Growth tiers are sold.
+- [Found For AI pricing](https://foundforai.com/pricing): full pricing for all tiers.
+- [AI Visibility Scorecard](https://foundforai.com/scorecard): free 5-minute audit tool that scores how well a business is currently surfaced by AI assistants.
+- [Book a strategy call](https://foundforai.com/book-call): for businesses interested in the done-for-you tiers.
+
+## Technical
+
+Built on an open-source fork of [Plausible Analytics](https://github.com/plausible/analytics), released under AGPL-3.0. The fork source code is at [github.com/foundforai/foundforai-analytics](https://github.com/foundforai/foundforai-analytics).
