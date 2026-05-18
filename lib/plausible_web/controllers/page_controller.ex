@@ -12,4 +12,14 @@ defmodule PlausibleWeb.PageController do
   def index(conn, _params) do
     render(conn, "index.html")
   end
+
+  @doc """
+  Post-Stripe-checkout landing page. Users land here right after paying via a
+  Stripe Payment Link. The webhook handler creates their account asynchronously
+  and emails them a one-time login link, so this page just tells them what to
+  expect next.
+  """
+  def welcome(conn, _params) do
+    render(conn, "welcome.html")
+  end
 end

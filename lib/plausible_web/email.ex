@@ -27,6 +27,14 @@ defmodule PlausibleWeb.Email do
     |> render("welcome_email.html", user: user)
   end
 
+  def foundforai_subscription_welcome(user, login_link) do
+    priority_email()
+    |> to(user)
+    |> tag("foundforai-subscription-welcome")
+    |> subject("Welcome to Found For AI Analytics — your login link")
+    |> render("foundforai_subscription_welcome.html", user: user, login_link: login_link)
+  end
+
   def create_site_email(user) do
     base_email()
     |> to(user)

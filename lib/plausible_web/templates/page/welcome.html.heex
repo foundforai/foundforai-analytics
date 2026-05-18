@@ -1,0 +1,33 @@
+<.focus_box>
+  <:title>
+    You're in. Check your email.
+  </:title>
+
+  <p>
+    Your subscription is active and your account is being set up right
+    now. Within the next minute, you'll receive an email with a one-time
+    link to set your password and log in.
+  </p>
+
+  <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">
+    Sent from <b class="text-gray-900 dark:text-gray-100">noreply@foundforai.com</b>.
+    Check your spam folder if it doesn't show up. If it still hasn't
+    arrived after five minutes, reply to your Stripe receipt and we'll
+    sort it out.
+  </p>
+
+  <:footer>
+    <.focus_list>
+      <:item>
+        <.styled_link href={Routes.auth_path(@conn, :login)}>
+          Already logged in? Go to your sites
+        </.styled_link>
+      </:item>
+      <:item>
+        <.styled_link href="https://foundforai.com" new_tab={true}>
+          Back to foundforai.com
+        </.styled_link>
+      </:item>
+    </.focus_list>
+  </:footer>
+</.focus_box>

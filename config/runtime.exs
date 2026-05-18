@@ -104,6 +104,7 @@ super_admin_user_ids =
 env = get_var_from_path_or_env(config_dir, "ENVIRONMENT", "prod")
 mailer_adapter = get_var_from_path_or_env(config_dir, "MAILER_ADAPTER", "Bamboo.Mua")
 mailer_email = get_var_from_path_or_env(config_dir, "MAILER_EMAIL", "plausible@#{base_url.host}")
+stripe_webhook_secret = get_var_from_path_or_env(config_dir, "STRIPE_WEBHOOK_SECRET")
 
 mailer_email =
   if mailer_name = get_var_from_path_or_env(config_dir, "MAILER_NAME") do
@@ -351,6 +352,7 @@ sso_verification_nameservers =
 config :plausible,
   environment: env,
   mailer_email: mailer_email,
+  stripe_webhook_secret: stripe_webhook_secret,
   super_admin_user_ids: super_admin_user_ids,
   is_selfhost: is_selfhost,
   custom_script_name: custom_script_name,
