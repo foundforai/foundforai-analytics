@@ -1,29 +1,44 @@
 <.focus_box>
   <:title>
-    Welcome to Found For AI Analytics!
+    Track how AI recommends your business
   </:title>
 
   <p>
-    Found For AI Analytics is a simple, lightweight (&lt;&nbsp;1&nbsp;KB) and privacy-friendly alternative to Google Analytics. Learn more about
-    <.styled_link href="https://foundforai.com">
-      Found For AI Analytics
-    </.styled_link>.
+    Privacy-friendly analytics for the AI era. See exactly how
+    ChatGPT, Claude, Perplexity, and Gemini describe you — and get a
+    monthly DIY AEO report so you can actually move the needle.
   </p>
+
+  <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">
+    <b class="text-gray-900 dark:text-gray-100">$49/month</b>
+    · 7-day free trial · No setup call · Cancel anytime
+  </p>
+
+  <div class="mt-6">
+    <.button_link
+      href="https://buy.stripe.com/8x2eV78Ws36B0yA0WZ3Nm00"
+      new_tab={true}
+      mt?={false}
+      class="w-full"
+    >
+      Start your 7-day free trial →
+    </.button_link>
+  </div>
 
   <:footer>
     <.focus_list>
       <:item>
         <.styled_link href={Routes.auth_path(@conn, :login)}>
-          Login
+          Already have an account? Log in
         </.styled_link>
       </:item>
       <:item>
-        <.styled_link href={Routes.auth_path(@conn, :register_form)}>
-          Register
+        <.styled_link href="https://foundforai.com/pricing" new_tab={true}>
+          Want done-for-you instead? See the AI Operator Subscription
         </.styled_link>
       </:item>
       <:item>
-        <.styled_link href="https://x.com/FoundForAI">
+        <.styled_link href="https://x.com/FoundForAI" new_tab={true}>
           Follow on X
         </.styled_link>
       </:item>
