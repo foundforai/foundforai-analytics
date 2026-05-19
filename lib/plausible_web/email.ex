@@ -35,6 +35,14 @@ defmodule PlausibleWeb.Email do
     |> render("foundforai_subscription_welcome.html", user: user, login_link: login_link)
   end
 
+  def foundforai_subscription_cancelled(user) do
+    base_email()
+    |> to(user)
+    |> tag("foundforai-subscription-cancelled")
+    |> subject("Your Found For AI Analytics subscription has ended")
+    |> render("foundforai_subscription_cancelled.html", user: user)
+  end
+
   def create_site_email(user) do
     base_email()
     |> to(user)

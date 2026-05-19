@@ -39,6 +39,17 @@ defmodule PlausibleWeb.Api.StripeController do
     end
   end
 
+  def webhook(conn, %{"type" => "customer.subscription.deleted"} = params) do
+    case handle_subscription_deleted(params["data"]["object"]) do
+      :ok ->
+        json(conn, %{received: true})
+
+      {:error, reason} ->
+        Logger.error("Stripe webhook: subscription.deleted failed: #{inspect(reason)}")
+        json(conn, %{received: true, error: inspect(reason)})
+    end
+  end
+
   def webhook(conn, %{"type" => type}) do
     Logger.debug("Stripe webhook: ignoring event type #{type}")
     json(conn, %{received: true})
@@ -60,6 +71,57 @@ defmodule PlausibleWeb.Api.StripeController do
   end
 
   defp handle_checkout_completed(_), do: {:error, :invalid_session}
+
+  # --- Cancellation flow ---
+
+  defp handle_subscription_deleted(%{"customer" => customer_id}) when is_binary(customer_id) do
+    with {:ok, email} <- fetch_customer_email(customer_id),
+         email <- String.downcase(email),
+         %Auth.User{} = user <- Repo.get_by(Auth.User, email: email),
+         %Teams.Team{} = team <- Teams.get_owned_team(user) do
+      team
+      |> Ecto.Changeset.change(locked: true)
+      |> Repo.update!()
+
+      Logger.info("Stripe webhook: locked team #{team.identifier} for #{email}")
+      send_cancellation_email(user)
+      :ok
+    else
+      nil ->
+        {:error, :user_or_team_not_found}
+
+      {:error, reason} ->
+        {:error, reason}
+
+      other ->
+        {:error, {:unexpected, other}}
+    end
+  end
+
+  defp handle_subscription_deleted(_), do: {:error, :missing_customer_id}
+
+  defp fetch_customer_email(customer_id) do
+    with secret when is_binary(secret) and byte_size(secret) > 0 <-
+           Application.get_env(:plausible, :stripe_secret_key),
+         {:ok, %Req.Response{status: 200, body: body}} <-
+           Req.get("https://api.stripe.com/v1/customers/#{customer_id}",
+             auth: {:bearer, secret},
+             receive_timeout: 10_000
+           ),
+         email when is_binary(email) <- Map.get(body, "email") do
+      {:ok, email}
+    else
+      nil -> {:error, :missing_stripe_secret_or_customer_email}
+      {:ok, %Req.Response{status: status}} -> {:error, {:stripe_api_status, status}}
+      {:error, reason} -> {:error, {:stripe_api_error, reason}}
+      _ -> {:error, :stripe_customer_fetch_failed}
+    end
+  end
+
+  defp send_cancellation_email(user) do
+    PlausibleWeb.Email.foundforai_subscription_cancelled(user)
+    |> Plausible.Mailer.deliver_later()
+  end
 
   defp provision_and_notify(email, name) do
     case provision_user(email, name) do
