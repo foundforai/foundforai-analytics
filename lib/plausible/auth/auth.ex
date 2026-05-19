@@ -231,16 +231,14 @@ defmodule Plausible.Auth do
     end
   end
 
-  on_ee do
-    def super_admin?(nil), do: false
-    def super_admin?(%Plausible.Auth.User{id: id}), do: super_admin?(id)
+  def super_admin?(nil), do: false
+  def super_admin?(%Plausible.Auth.User{id: id}), do: super_admin?(id)
 
-    def super_admin?(user_id) when is_integer(user_id) do
-      user_id in Application.get_env(:plausible, :super_admin_user_ids)
-    end
-  else
-    def super_admin?(_), do: always(false)
+  def super_admin?(user_id) when is_integer(user_id) do
+    user_id in (Application.get_env(:plausible, :super_admin_user_ids) || [])
   end
+
+  def super_admin?(_), do: false
 
   @spec list_api_keys(Auth.User.t(), Teams.Team.t() | nil) :: [Auth.ApiKey.t()]
   def list_api_keys(user, team) do
