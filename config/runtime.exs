@@ -105,6 +105,7 @@ env = get_var_from_path_or_env(config_dir, "ENVIRONMENT", "prod")
 mailer_adapter = get_var_from_path_or_env(config_dir, "MAILER_ADAPTER", "Bamboo.Mua")
 mailer_email = get_var_from_path_or_env(config_dir, "MAILER_EMAIL", "plausible@#{base_url.host}")
 stripe_webhook_secret = get_var_from_path_or_env(config_dir, "STRIPE_WEBHOOK_SECRET")
+stripe_secret_key = get_var_from_path_or_env(config_dir, "STRIPE_SECRET_KEY")
 
 mailer_email =
   if mailer_name = get_var_from_path_or_env(config_dir, "MAILER_NAME") do
