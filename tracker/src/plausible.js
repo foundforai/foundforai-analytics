@@ -7,9 +7,9 @@ import { track } from './track'
 function init(overrides) {
   const options = getOptionsWithDefaults(overrides || {})
 
-  if (COMPILE_PLAUSIBLE_WEB && window.plausible && window.plausible.l) {
+  if (COMPILE_PLAUSIBLE_WEB && window.foundforai && window.foundforai.l) {
     if (options.logging) {
-      console.warn('Plausible analytics script was already initialized, skipping init')
+      console.warn('Found For AI Analytics script was already initialized, skipping init')
     }
     return
   }
@@ -28,41 +28,41 @@ function init(overrides) {
 
 
   if (COMPILE_PLAUSIBLE_WEB || COMPILE_PLAUSIBLE_LEGACY_VARIANT) {
-    // Call `track` for any events that were queued via plausible('event') before `init` was called
-    var queue = (window.plausible && window.plausible.q) || []
+    // Call `track` for any events that were queued via foundforai('event') before `init` was called
+    var queue = (window.foundforai && window.foundforai.q) || []
     for (var i = 0; i < queue.length; i++) {
       track.apply(this, queue[i])
     }
 
-    window.plausible = track
-    window.plausible.init = init
-    window.plausible.v = COMPILE_TRACKER_SCRIPT_VERSION
+    window.foundforai = track
+    window.foundforai.init = init
+    window.foundforai.v = COMPILE_TRACKER_SCRIPT_VERSION
 
     if (COMPILE_PLAUSIBLE_WEB) {
-      window.plausible.s = config.lib
+      window.foundforai.s = config.lib
     }
 
-    window.plausible.l = true
+    window.foundforai.l = true
   }
 
   // Bind to window to be detectable by the verifier tool
   // This is done in a 'safe' way to avoid breaking the page if window is frozen or running without window
   if (COMPILE_PLAUSIBLE_NPM && config.bindToWindow && typeof window !== 'undefined') {
-    window.plausible = track
-    window.plausible.s = 'npm'
-    window.plausible.v = COMPILE_TRACKER_SCRIPT_VERSION
-    window.plausible.l = true
+    window.foundforai = track
+    window.foundforai.s = 'npm'
+    window.foundforai.v = COMPILE_TRACKER_SCRIPT_VERSION
+    window.foundforai.l = true
   }
 }
 
 if (COMPILE_PLAUSIBLE_WEB) {
-  window.plausible = (window.plausible || {})
+  window.foundforai = (window.foundforai || {})
 
-  if (plausible.o) {
-    init(plausible.o)
+  if (foundforai.o) {
+    init(foundforai.o)
   }
 
-  plausible.init = init
+  foundforai.init = init
 } else if (COMPILE_PLAUSIBLE_LEGACY_VARIANT) {
   // Legacy variants automatically initialize based compile variables
   init()

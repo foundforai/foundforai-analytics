@@ -9,7 +9,7 @@ import { config, scriptEl } from './config'
 export function track(eventName, options) {
   if (COMPILE_PLAUSIBLE_NPM && !config.isInitialized) {
     throw new Error(
-      'plausible.track() can only be called after plausible.init()'
+      'foundforai.track() can only be called after foundforai.init()'
     )
   }
 

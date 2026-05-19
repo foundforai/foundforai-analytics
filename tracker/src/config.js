@@ -45,13 +45,13 @@ export function init(options) {
     })
   } else if (COMPILE_PLAUSIBLE_NPM) {
     if (config.isInitialized) {
-      throw new Error('plausible.init() can only be called once')
+      throw new Error('foundforai.init() can only be called once')
     }
     if (!options || !options.domain) {
-      throw new Error('plausible.init(): domain argument is required')
+      throw new Error('foundforai.init(): domain argument is required')
     }
     if (!options.endpoint) {
-      options.endpoint = 'https://plausible.io/api/event'
+      options.endpoint = 'https://analytics.foundforai.com/api/event'
     }
     Object.assign(config, options)
     config.isInitialized = true

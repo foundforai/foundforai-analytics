@@ -265,8 +265,8 @@ defmodule PlausibleWeb.Live.Installation.Instructions do
     <!-- Privacy-friendly analytics by Found For AI -->
     <script async src="#{tracker_url(tracker_script_configuration)}"></script>
     <script>
-      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-      plausible.init()
+      window.foundforai=window.foundforai||function(){(foundforai.q=foundforai.q||[]).push(arguments)},foundforai.init=foundforai.init||function(i){foundforai.o=i||{}};
+      foundforai.init()
     </script>
     """
   end

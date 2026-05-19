@@ -1,16 +1,16 @@
-// This snippet is shown to users to install plausible tracker script
+// This snippet is shown to users to install the Found For AI tracker script
 
 //<script>
-window.plausible =
-  window.plausible ||
+window.foundforai =
+  window.foundforai ||
   function () {
-    ;(plausible.q = plausible.q || []).push(arguments)
+    ;(foundforai.q = foundforai.q || []).push(arguments)
   }
-plausible.init =
-  plausible.init ||
+foundforai.init =
+  foundforai.init ||
   function (overrides) {
-    plausible.o = overrides || {}
+    foundforai.o = overrides || {}
   }
 
-//   plausible.init()
+//   foundforai.init()
 //</script>
