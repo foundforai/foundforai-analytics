@@ -91,6 +91,10 @@ defmodule PlausibleWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :foundforai_admin do
+    plug PlausibleWeb.SuperAdminOnlyPlug
+  end
+
   on_ee do
     pipeline :flags do
       plug :accepts, ["html"]
@@ -571,6 +575,14 @@ defmodule PlausibleWeb.Router do
 
     get "/", PageController, :index
     get "/welcome", PageController, :welcome
+
+    scope "/admin" do
+      pipe_through :foundforai_admin
+      get "/", FoundforaiAdminController, :index
+      post "/teams/:team_id/lock", FoundforaiAdminController, :lock_team
+      post "/teams/:team_id/unlock", FoundforaiAdminController, :unlock_team
+      delete "/users/:user_id", FoundforaiAdminController, :delete_user
+    end
 
     get "/billing/change-plan/preview/:plan_id", BillingController, :change_plan_preview
     post "/billing/change-plan/:new_plan_id", BillingController, :change_plan

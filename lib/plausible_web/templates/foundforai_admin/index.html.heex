@@ -1,0 +1,98 @@
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div class="mb-8">
+    <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-100">Admin</h1>
+    <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
+      Super-admin only · {@stats.total_users} users · {@stats.total_teams} teams · {@stats.locked_teams} locked · {@stats.total_sites} sites
+    </p>
+  </div>
+
+  <%= if Phoenix.Flash.get(@flash, :success) do %>
+    <div class="mb-6 rounded-lg bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-200 dark:border-emerald-800 px-4 py-3 text-sm text-emerald-700 dark:text-emerald-200">
+      {Phoenix.Flash.get(@flash, :success)}
+    </div>
+  <% end %>
+
+  <%= if Phoenix.Flash.get(@flash, :error) do %>
+    <div class="mb-6 rounded-lg bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 px-4 py-3 text-sm text-red-700 dark:text-red-200">
+      {Phoenix.Flash.get(@flash, :error)}
+    </div>
+  <% end %>
+
+  <div class="bg-white dark:bg-gray-900 shadow rounded-lg overflow-hidden border border-gray-200 dark:border-gray-800">
+    <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-800">
+      <thead class="bg-gray-50 dark:bg-gray-800">
+        <tr>
+          <th class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">Email</th>
+          <th class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 hidden sm:table-cell">Name</th>
+          <th class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 hidden md:table-cell">Joined</th>
+          <th class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">Status</th>
+          <th class="px-4 py-3 text-right text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200 dark:divide-gray-800">
+        <%= for user <- @users do %>
+          <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+            <td class="px-4 py-3 text-sm text-gray-900 dark:text-gray-100 font-medium">
+              {user.email}
+            </td>
+            <td class="px-4 py-3 text-sm text-gray-600 dark:text-gray-300 hidden sm:table-cell">
+              {user.name}
+            </td>
+            <td class="px-4 py-3 text-sm text-gray-500 dark:text-gray-400 hidden md:table-cell">
+              {Calendar.strftime(user.inserted_at, "%Y-%m-%d")}
+            </td>
+            <td class="px-4 py-3 text-sm">
+              <%= cond do %>
+                <% is_nil(user.team_id) -> %>
+                  <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300">
+                    No team
+                  </span>
+                <% user.locked -> %>
+                  <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-200">
+                    🔒 Locked
+                  </span>
+                <% true -> %>
+                  <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-200">
+                    ✓ Active
+                  </span>
+              <% end %>
+            </td>
+            <td class="px-4 py-3 text-right text-sm whitespace-nowrap">
+              <%= if user.team_id do %>
+                <%= if user.locked do %>
+                  <.form for={%{}} action={"/admin/teams/#{user.team_id}/unlock"} method="post" class="inline">
+                    <input type="hidden" name="_csrf_token" value={Plug.CSRFProtection.get_csrf_token()} />
+                    <button type="submit" class="text-xs font-medium text-emerald-600 dark:text-emerald-400 hover:underline">
+                      Unlock
+                    </button>
+                  </.form>
+                <% else %>
+                  <.form for={%{}} action={"/admin/teams/#{user.team_id}/lock"} method="post" class="inline" data-confirm={"Lock team #{user.team_name}? This blocks dashboard access immediately."}>
+                    <input type="hidden" name="_csrf_token" value={Plug.CSRFProtection.get_csrf_token()} />
+                    <button type="submit" class="text-xs font-medium text-amber-600 dark:text-amber-400 hover:underline">
+                      Lock
+                    </button>
+                  </.form>
+                <% end %>
+                <span class="text-gray-300 dark:text-gray-700 mx-2">·</span>
+              <% end %>
+              <.form for={%{}} action={"/admin/users/#{user.user_id}"} method="delete" class="inline" data-confirm={"PERMANENTLY delete user #{user.email}? This cannot be undone."}>
+                <input type="hidden" name="_csrf_token" value={Plug.CSRFProtection.get_csrf_token()} />
+                <button type="submit" class="text-xs font-medium text-red-600 dark:text-red-400 hover:underline">
+                  Delete
+                </button>
+              </.form>
+            </td>
+          </tr>
+        <% end %>
+        <%= if @users == [] do %>
+          <tr>
+            <td colspan="5" class="px-4 py-12 text-center text-sm text-gray-500 dark:text-gray-400">
+              No users yet.
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
