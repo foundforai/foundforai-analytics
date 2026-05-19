@@ -1,12 +1,76 @@
 # Found For AI Analytics — analytics.foundforai.com
 #
 # We intentionally allow crawling of the public marketing surface
-# (landing page, welcome page, future docs). Dashboard/auth/api routes
-# are protected by per-page <meta name="robots" content="noindex">
-# headers set by the NoRobots plug, so we don't need to enumerate
-# private routes here.
+# (landing page, welcome page, future docs). Dashboard, auth, and
+# API routes are individually marked noindex via per-page meta tags
+# and the x-robots-tag HTTP header set by the NoRobots plug, so we
+# don't need to enumerate private routes here.
+#
+# AI assistants are explicitly allowed because Found For AI builds
+# Answer Engine Optimization tooling — being indexable by AI is the
+# whole point of the product.
 
 User-agent: *
+Allow: /
+
+# OpenAI (ChatGPT, GPT models training)
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+
+# Google AI (Gemini, AI Overviews, Bard)
+User-agent: Google-Extended
+Allow: /
+User-agent: GoogleOther
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
+# Microsoft / Bing AI
+User-agent: bingbot
+Allow: /
+
+# Meta (LLaMA training)
+User-agent: meta-externalagent
+Allow: /
+User-agent: FacebookBot
+Allow: /
+
+# Common Crawl (feeds many open AI training datasets)
+User-agent: CCBot
+Allow: /
+
+# DuckDuckGo AI
+User-agent: DuckAssistBot
+Allow: /
+
+# Mistral
+User-agent: MistralAI-User
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
 Allow: /
 
 Sitemap: https://analytics.foundforai.com/sitemap.xml
