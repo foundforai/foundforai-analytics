@@ -48,9 +48,7 @@
     {render("_tracking.html", assigns)}
 
     <%= if assigns[:json_ld] do %>
-      <script type="application/ld+json">
-        {raw(Jason.encode!(@json_ld))}
-      </script>
+      <script type="application/ld+json"><%= raw(Jason.encode!(@json_ld)) %></script>
     <% end %>
   </head>
   <body
